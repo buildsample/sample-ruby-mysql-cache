@@ -17,7 +17,7 @@ before_script:
   - mysql -e 'DROP DATABASE IF EXISTS test;'
   - mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
   - sudo usermod -G shippable www-data
-# - sudo chmod 0777 $SHIPPABLE_REPO_DIR
+  - sudo chmod 0777 $SHIPPABLE_REPO_DIR
 
   
 cache: true
