@@ -16,5 +16,8 @@ before_script:
   # Resetting the database in before_script makes sure that the database is always empty for consistent test results.
   - mysql -e 'DROP DATABASE IF EXISTS test;'
   - mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
+  - sudo usermod -G shippable www-data
+# - sudo chmod 0777 $SHIPPABLE_REPO_DIR
+
   
-#cache: true
+cache: true
