@@ -26,7 +26,8 @@ before_script:
   - sudo usermod -G shippable www-data
   - sudo chmod 0777 $SHIPPABLE_REPO_DIR
 
-build_image: shippable/minv2:beta
+
+#build_image: shippable/minv2:beta
 
 
 
