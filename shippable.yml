@@ -3,7 +3,7 @@ language: ruby
 
 rvm:
   - 1.9.3
-  - 2.2.0
+ # - 2.2.0
 
 env:
   global:
@@ -12,6 +12,10 @@ env:
     - CI_REPORTS=shippable/testresults COVERAGE_REPORTS=shippable/codecoverage
     - MYSQL_HOSTNAME=127.0.0.1 MYSQL_USERNAME=shippable MYSQL_PASSWORD="" MYSQL_DB_NAME=test MYSQL_PORT=3306
 
+before_install:
+  #- source /home/shippable/.rvm/scripts/rvm
+  - source ~/.rvm/scripts/rvm && rvm use 1.9.3
+  
 before_script: 
   # Setting up the directories we need to get test results and code coverage:
   - mkdir -p shippable/testresults
@@ -21,7 +25,8 @@ before_script:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
   - sudo usermod -G shippable www-data
   - sudo chmod 0777 $SHIPPABLE_REPO_DIR
-#build_image: shippable/minv2:beta
+
+build_image: shippable/minv2:beta
 
 
 
