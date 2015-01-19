@@ -14,7 +14,7 @@ env:
 
 before_install:
   #- source /home/shippable/.rvm/scripts/rvm
-  - source ~/.rvm/scripts/rvm && rvm use 1.9.3
+  - source ~/.rvm/scripts/rvm && rvm use 1.9.2
   
 before_script: 
   # Setting up the directories we need to get test results and code coverage:
