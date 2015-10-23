@@ -2,7 +2,7 @@ language: ruby
 
 
 build_image: 
-  - shippable/minv2
+   shippable/minv2
   
 rvm:
   #- 1.9.3
